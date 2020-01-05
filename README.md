@@ -9,8 +9,6 @@ RSS reader for drobilica
 - internalization - language switcher i18n
 
 
-
-
 # RSS Feeder Sites
 ## News sites
 
@@ -19,3 +17,4 @@ http://rs.n1info.com/rss/249/Naslovna
 http://www.politika.rs/rss/
 
 ## Tech sites
+rhttps://distrowatch.com/news/dw.xml

@@ -10,7 +10,7 @@ body {
 .grid-menu-header { grid-area: menu-header; }
 .grid-main { grid-area: main; }
 .grid-sidebar { grid-area: right; }
-.grid-footer { grid-area: footer; }
+.grid-footer { grid-area: footer;}
 
 .grid-container {
   display: grid;
@@ -27,11 +27,6 @@ body {
                       1fr
                       40px;
 }
-
-/* .grid-container > div {
-  background-color: #292840;
-  text-align: center;
-} */
 
 /* central fonts  */
 .centrate {
@@ -53,9 +48,12 @@ body {
   padding: 12px;
   text-decoration: none;
   outline: 0;
-
 }
 
+.overflow {
+  overflow-y: auto;
+  height: 96.5vh;
+}
 .vertical-menu a:hover {
   background-color: #47525F;
 }
