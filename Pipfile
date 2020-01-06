@@ -9,6 +9,7 @@ verify_ssl = true
 flask = "*"
 feedparser = "*"
 python-dotenv = "*"
+beautifulsoup4 = "*"
 
 [requires]
 python_version = "3.6"

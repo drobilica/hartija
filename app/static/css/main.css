@@ -79,3 +79,44 @@ body {
   outline: 0;
   color: #DA513D;
 }
+
+
+/* sample lists  */
+
+
+ul {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-family: arial;
+    list-style: none;
+    padding: 0;
+    background: #4a90e2;
+    border-radius: 5px;
+    padding: 6px;
+}
+ul li {
+    background: #285b97;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 5px 10px 5px 5px;
+    margin: 5px;
+}
+span {
+    display: flex;
+    padding: 3px 6px;
+    justify-content: flex-start;
+    color: #285b97;
+    font-size: 10px;
+    align-self: flex-start;
+    text-transform: uppercase;
+    background: #acd2ff;
+    border-radius: 2px;
+    letter-spacing: 1px;
+}
+
+ul li img {
+  height: 150px;
+}

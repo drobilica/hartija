@@ -2,8 +2,44 @@
 
 {% block content %}
 
-  {% for entry in entries %}
-    <div><p> {{ entry }} </b></p></div>
-  {% endfor %}
+<hr />
+<h3>image</h3>
+{{eimage}}
+
+  <hr />
+  <h3>Title</h3>
+  {{etitle}}
+
+<hr />
+<h3>summary</h3>
+{{esummary}}
+
+<hr />
+<h3>edate</h3>
+{{edate}}
+
+<a href="{{ elink }}">Link</a>
+<hr />
+<h3>Number of articles </h3>
+{{entiresnumber}}
+<hr />
+<h3>sample lists  </h3>
+
+<ul>
+    <li>{{eimage}}<span>{{etitle}}</span></li>
+    <li>foo<span>span</span></li>
+    <li>foo<span>span</span></li>
+    <li>foo<span>span</span></li>
+    <li>foo<span>span</span></li>
+    <li>foo<span>span</span></li>
+    <li>foo<span>span</span></li>
+    <li>foo<span>span</span></li>
+    <li>foo<span>span</span></li>
+    <li>foo<span>span</span></li>
+    <li>foo<span>span</span></li>
+    <li>foo<span>span</span></li>
+    <li>bar<span>span</span></li>
+</ul>
+
 
 {% endblock %}
