@@ -2,44 +2,21 @@
 
 {% block content %}
 
-<hr />
-<h3>image</h3>
-{{eimage}}
 
-  <hr />
-  <h3>Title</h3>
-  {{etitle}}
-
-<hr />
-<h3>summary</h3>
-{{esummary}}
-
-<hr />
-<h3>edate</h3>
-{{edate}}
-
-<a href="{{ elink }}">Link</a>
-<hr />
-<h3>Number of articles </h3>
-{{entiresnumber}}
-<hr />
-<h3>sample lists  </h3>
-
+{% for entry in entryAll %}
 <ul>
-    <li>{{eimage}}<span>{{etitle}}</span></li>
-    <li>foo<span>span</span></li>
-    <li>foo<span>span</span></li>
-    <li>foo<span>span</span></li>
-    <li>foo<span>span</span></li>
-    <li>foo<span>span</span></li>
-    <li>foo<span>span</span></li>
-    <li>foo<span>span</span></li>
-    <li>foo<span>span</span></li>
-    <li>foo<span>span</span></li>
-    <li>foo<span>span</span></li>
-    <li>foo<span>span</span></li>
-    <li>bar<span>span</span></li>
+    <li><div class="article_content">
+      <span>{{entry.title }}</span>
+      <div class="short-summary">
+        {{entry.content}}
+        <a href="{{ entry.link }}">Read More</a>
+      </div>
+    </div>{{entry.img}}
+</li>
 </ul>
+
+{% endfor %}
+
 
 
 {% endblock %}

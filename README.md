@@ -1,4 +1,4 @@
-# dssreader
+# hartija
 RSS reader for drobilica
 
 - `make run` to run project

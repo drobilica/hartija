@@ -99,7 +99,9 @@ ul li {
     background: #285b97;
     border-radius: 3px;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    /*flex-direction: row-reverse;*/
+
     justify-content: space-between;
     padding: 5px 10px 5px 5px;
     margin: 5px;
