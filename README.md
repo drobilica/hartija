@@ -17,4 +17,4 @@ http://rs.n1info.com/rss/249/Naslovna
 http://www.politika.rs/rss/
 
 ## Tech sites
-rhttps://distrowatch.com/news/dw.xml
+https://distrowatch.com/news/dw.xml
