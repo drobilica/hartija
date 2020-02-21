@@ -11,5 +11,5 @@ feedparser = "*"
 python-dotenv = "*"
 beautifulsoup4 = "*"
 
-[requires]
-python_version = "3.6"
+#[requires]
+#python_version = "3.7"
