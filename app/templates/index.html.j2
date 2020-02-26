@@ -2,21 +2,22 @@
 
 {% block content %}
 
+  {% for entry in entryAll %}
+  <ul>
+      <li>
+  	    <div class="article_content">
+  	      <span>{{entry.title}}</span>
 
-{% for entry in entryAll %}
-<ul>
-    <li><div class="article_content">
-      <span>{{entry.title}}</span>
-      <div class="short-summary">
-        {{entry.content}}
-        <a href="{{ entry.link }}">Read More</a>
-      </div>
-    </div>{{entry.img}}
-</li>
-</ul>
+  	      <div class="short-summary">
+  	        {{entry.content}}
+  	        <a href="{{ entry.link }}">Read More</a>
+  	      </div>
 
-{% endfor %}
+  	    </div>{{entry.img}}
+  	</li>
+  </ul>
 
+  {% endfor %}
 
 
 {% endblock %}
