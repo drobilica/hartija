@@ -1,0 +1,15 @@
+
+tech:
+  - "https://distrowatch.com/news/dw.xml"
+
+hax:
+  - "https://www.psxhax.com/articles/index.rss"
+
+serbia_news:
+  - "http://www.politika.rs/rss/"
+  - "http://rs.n1info.com/rss/249/Naslovna"
+
+games:
+  - "https://isthereanydeal.com/rss/specials/eu2/"
+  - "https://www.gamasutra.com/blogs/rss/"
+  - "https://www.eurogamer.net/?format=rss&type=article"
