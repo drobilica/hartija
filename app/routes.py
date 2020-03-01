@@ -13,12 +13,12 @@ def return_cache(tmp_file,update_time_sec):
 @app.route('/index')
 def index():
 
-    # NewsFeed = feedparser.parse("https://www.eurogamer.net/?format=rss&type=article")
+    NewsFeed = feedparser.parse("https://www.eurogamer.net/?format=rss&type=article")
     # NewsFeed = feedparser.parse("https://distrowatch.com/news/dw.xml")
     # NewsFeed = feedparser.parse("http://www.politika.rs/rss/")
     # NewsFeed = feedparser.parse("https://www.gamasutra.com/blogs/rss/")
     # NewsFeed = feedparser.parse("https://isthereanydeal.com/rss/specials/eu2/")
-    NewsFeed = feedparser.parse("https://www.psxhax.com/articles/index.rss")
+    # NewsFeed = feedparser.parse("https://www.psxhax.com/articles/index.rss")
 
     # NewsFeed = feedparser.parse("http://rs.n1info.com/rss/249/Naslovna")
 
