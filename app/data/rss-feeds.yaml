@@ -1,4 +1,7 @@
 
+news:
+  - "http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss.xml"
+  - "http://feeds.feedburner.com/TechCrunch/"
 tech:
   - "https://distrowatch.com/news/dw.xml"
 

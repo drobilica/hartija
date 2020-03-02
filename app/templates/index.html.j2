@@ -6,10 +6,10 @@
   <ul>
       <li>
            <div class="article_content">
-             <span>{{value.title|e}}</span>
+             <span>{{ value.title|e }}</span>
              <div class="shortsummary">
-               {{value.summary|e}}
-               <a href="{{ value["link"] }}">Read More</a>
+               {{ value.summary|e }}
+               <a href="{{ value.link }}">Read More</a>
              </div>
            </div>{{value.img}}
        </li>

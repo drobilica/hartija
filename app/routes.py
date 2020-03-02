@@ -13,32 +13,26 @@ def return_cache(tmp_file,update_time_sec):
 def index():
     entries = model.load_sample_csv()
 
-    # print(entries['0'])
-    # print(entries["title"])
-    # print(entries.keys())
-    # keys = list(entries.keys())
-    # values = list(entries.values())
-    # print(keys)
-    # print(values)
-
-
     return render_template(
         'index.html.j2',
         entries = entries
         )
 
+
 @app.route('/live')
 def live():
     entries = model.load_live_news()
     return render_template(
-        'testiterate.html.j2',
+        'live.html.j2',
         entries = entries
         )
 
 @app.route('/csv')
 def csv():
-    entries = model.generate_csv()
+    model.generate_csv()
+    entries = model.load_sample_csv()
+
     return render_template(
-        'testiterate.html.j2',
+        'index.html.j2',
         entries = entries
         )

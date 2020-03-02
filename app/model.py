@@ -3,29 +3,11 @@ import feedparser
 import csv
 from bs4 import BeautifulSoup
 from collections import defaultdict
+import yaml
 
 def load_sample_csv():
-    # df=pd.read_csv('sample_data.csv')
-    # for index, row in df.iterrows():
-    #     d=row.to_dict()
-    #     print(d)
-    # print(type(d))
-    # print(d.keys())
-    # return d
     df = pd.read_csv("sample_data.csv")
-    # df.from_csv(r'/home/mrle/dev/hartija/sample_data.csv')
     return df
-    # reader = csv.reader(open('sample_data.csv'))
-    # result = {}
-    # for row in reader:
-    #     key = row[0]
-    #     if key in result:
-    #         # implement your duplicate row handling here
-    #         pass
-    #     result[key] = row[0:]
-    # # print(result)
-    # print(result.keys())
-    # return result
 
 
 def load_live_news():
@@ -40,22 +22,23 @@ def load_live_news():
     return entries
 
 
-def commit_data_to_csv():
+def generate_csv():
 
     rawrss = [
         'http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss.xml',
-        # 'https://www.yahoo.com/news/rss/',
-        # 'http://www.huffingtonpost.co.uk/feeds/index.xml',
         'http://feeds.feedburner.com/TechCrunch/',
         ]
+
+    with open("data/rss-feeds.yaml", 'r') as stream:
+        out = yaml.load(stream)
+        print(out['news'])
+    print(out)
 
     feeds = [] # list of feed objects
 
     for url in rawrss:
         feeds.append(feedparser.parse(url)) # type list
-
     posts = [] # list of posts [(title1, link1, summary1), (title2, link2, summary2) ... ]
-
 
     for feed in feeds:
         for post in feed.entries:
@@ -63,4 +46,4 @@ def commit_data_to_csv():
             posts.append((post.title, post.link, post.summary))
 
     df = pd.DataFrame(posts, columns=['title', 'link', 'summary']) # pass data to init
-    df.to_csv(r'/home/mrle/dev/hartija/sample_data.csv')
+    df.to_csv(r'sample_data.csv')
