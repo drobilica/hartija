@@ -49,6 +49,13 @@ body {
   text-decoration: none;
   outline: 0;
 }
+/* .btn {
+  color: white;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  outline: 0;
+} */
 
 .overflow {
   overflow-y: auto;
@@ -56,9 +63,23 @@ body {
 }
 .vertical-menu a:hover {
   background-color: #47525F;
-}
+  }
+/* .btn:hover {
+  background-color: #47525F;getElementById
+} */
+/* .active  {
+  background-color: #DA513D;
+  color: white;
+  font-weight: bold;
+} */
 
 .vertical-menu a.active {
+  background-color: #DA513D;
+  color: white;
+  font-weight: bold;
+}
+
+ .vertical-menu a:active {
   background-color: #DA513D;
   color: white;
   font-weight: bold;

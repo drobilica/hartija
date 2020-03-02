@@ -1,10 +1,18 @@
 {% extends "base.html.j2" %}
-
 {% block content %}
 
+  {% for key,value in entries.iterrows() %}
 
-just bork
-
-
-
+  <ul>
+      <li>
+           <div class="article_content">
+             <span>{{value.title|e}}</span>
+             <div class="shortsummary">
+               {{value.summary|e}}
+               <a href="{{ value["link"] }}">Read More</a>
+             </div>
+           </div>{{value.img}}
+       </li>
+  </ul>
+  {% endfor %}
 {% endblock %}
