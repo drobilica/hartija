@@ -14,7 +14,7 @@ def index():
     entries = model.load_sample_csv()
 
     return render_template(
-        'index.html.j2',
+        'fixedlist.html.j2',
         entries = entries
         )
 

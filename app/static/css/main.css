@@ -112,12 +112,13 @@ ul li {
     padding: 5px 10px 5px 5px;
     margin: 5px;
 }
-span {
+
+.article_content span {
     display: flex;
     padding: 3px 6px;
     justify-content: flex-start;
     color: #285b97;
-    font-size: 10px;
+    font-size: 14px;
     align-self: flex-start;
     text-transform: uppercase;
     background: #acd2ff;
@@ -126,6 +127,19 @@ span {
     /*width: 100%*/
 }
 
-ul li img {
+.article_content img {
   height: 150px;
+}
+
+.article_content {
+  width:100%;
+}
+
+.article_content a {
+  align: right;
+}
+
+.summary {
+  padding: 3px 6px;
+
 }
