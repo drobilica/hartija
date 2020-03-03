@@ -22,13 +22,10 @@ def load_live_news():
     return entries
 
 
-def generate_csv():
+def make_cache():
 
     with open("data/rss-feeds.yaml", 'r') as stream:
-        out = yaml.load(stream)
-        # print(out['news'])
-    # print(out)
-    print(out)
+        out = yaml.load(stream, Loader=yaml.Loader)
 
     feeds = [] # list of feed objects
 
