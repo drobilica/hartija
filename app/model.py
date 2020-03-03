@@ -6,7 +6,7 @@ from collections import defaultdict
 import yaml
 
 def load_sample_csv():
-    df = pd.read_csv("sample_data.csv")
+    df = pd.read_csv("data/sample_data.csv")
     return df
 
 
@@ -24,19 +24,15 @@ def load_live_news():
 
 def generate_csv():
 
-    rawrss = [
-        'http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss.xml',
-        'http://feeds.feedburner.com/TechCrunch/',
-        ]
-
     with open("data/rss-feeds.yaml", 'r') as stream:
         out = yaml.load(stream)
-        print(out['news'])
+        # print(out['news'])
+    # print(out)
     print(out)
 
     feeds = [] # list of feed objects
 
-    for url in rawrss:
+    for url in out['news']:
         feeds.append(feedparser.parse(url)) # type list
     posts = [] # list of posts [(title1, link1, summary1), (title2, link2, summary2) ... ]
 
@@ -46,4 +42,4 @@ def generate_csv():
             posts.append((post.title, post.link, post.summary))
 
     df = pd.DataFrame(posts, columns=['title', 'link', 'summary']) # pass data to init
-    df.to_csv(r'sample_data.csv')
+    df.to_csv(r'data/sample_data.csv')

@@ -13,5 +13,4 @@ beautifulsoup4 = "*"
 pandas = "*"
 #[requires]
 #python_version = "3.7"
-yaml = "*"
 pyyaml = "*"
