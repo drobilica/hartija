@@ -19,7 +19,12 @@ RSS reader for drobilica
 ## RSS Feeder Sites
 Site lists are located in app/data/rss-feeds.yaml
 
+### Project structure
 
+ - `conf` dir is for configuration
+ - `app` dir is for logic/controller
+ - `data` dir is for model/data
+ - `static` dir is for static content and pages 
 
 ### API endpoints
 

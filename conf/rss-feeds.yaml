@@ -1,0 +1,17 @@
+news:
+  political:
+    - "http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss.xml"
+    - "http://feeds.feedburner.com/TechCrunch/"
+  tech:
+    - "https://distrowatch.com/news/dw.xml"
+
+  hax:
+    - "https://www.psxhax.com/articles/index.rss"
+
+  serbia_news:
+    - "http://www.politika.rs/rss/"
+    - "http://rs.n1info.com/rss/249/Naslovna"
+
+  games:
+    - "https://www.gamasutra.com/blogs/rss/"
+    - "https://www.eurogamer.net/?format=rss&type=article"
