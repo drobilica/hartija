@@ -22,7 +22,7 @@ def index():
 def explore(source=None):
     if source == None:
         yaml_keys = model.get_news()
-        random_news = yaml_keys[random.randint(0,len(yaml_keys))]
+        random_news = yaml_keys[random.randint(0,len(yaml_keys)-1)]
         entries = model.explore(random_news)
     else:
         entries = model.explore(source)

@@ -15,3 +15,25 @@ RSS reader for drobilica
 
 ## RSS Feeder Sites
 Site lists are located in app/data/rss-feeds.yaml
+
+
+
+### API endpoints
+
+
+#### GET
+
+Get info on what news are available
+`curl -X GET localhost:5000/api/cache`
+
+
+Get info when cache is created
+`curl -X GET localhost:5000/api/get_cache_info/`
+
+
+#### Set
+Make cache for individual category
+`curl -X GET localhost:5000/api/cache/games`
+
+Make cache for all 
+`curl -X GET localhost:5000/api/generate_cache/`
