@@ -5,10 +5,6 @@ from bs4 import BeautifulSoup
 from collections import defaultdict
 import yaml
 
-def load_sample_csv():
-    df = pd.read_csv("data/sample_data.csv")
-    return df
-
 def explore(source):
     df = pd.read_csv(f"data/{source}_data.csv")
     return df
@@ -28,7 +24,7 @@ def load_live_news():
 
 def make_cache(source):
 
-    with open("data/rss-feeds.yaml", 'r') as stream:
+    with open("conf/rss-feeds.yaml", 'r') as stream:
         out = yaml.load(stream, Loader=yaml.Loader)
 
     feeds = [] # list of feed objects
@@ -45,12 +41,14 @@ def make_cache(source):
     df = pd.DataFrame(posts, columns=['title', 'link', 'summary']) # pass data to init
     df.to_csv(f'data/{source}_data.csv')
 
+
 def get_news():
     with open("data/rss-feeds.yaml", 'r') as stream:
         out = yaml.load(stream, Loader=yaml.Loader)
     yaml_keys = list(out['news'].keys()) # a list
 
     return yaml_keys
+
 
 def populate_news():
     for i in get_news():

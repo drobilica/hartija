@@ -45,3 +45,7 @@ Make cache for individual category
 
 Make cache for all 
 `curl -X GET localhost:5000/api/generate_cache/`
+
+
+#### TODO
+id

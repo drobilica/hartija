@@ -1,12 +1,10 @@
 import os,time
 from app import app, model
-from app.model import load_sample_csv
 from flask import render_template, flash, redirect, url_for, request, jsonify
 import random # get this out of this
 
-def return_cache(tmp_file,update_time_sec):
-    return None
 
+app.url_map.strict_slashes = False
 
 @app.route('/')
 @app.route('/index')
@@ -28,7 +26,7 @@ def explore(source=None):
         entries = model.explore(source)
 
     return render_template(
-        'fixedlist.html.j2',
+        'csv_list.html.j2',
         entries = entries
         )
 
@@ -41,7 +39,9 @@ def live():
         entries = entries
         )
 
-@app.route('/api/cache/')
+### API starts here ###
+
+@app.route('/api/cache')
 @app.route('/api/cache/<source>')
 def cache(source=None):
     if source == None:
@@ -51,13 +51,13 @@ def cache(source=None):
         cache_resp = f'cache made for {source}'
     return jsonify(cache_resp)
 
-@app.route('/api/generate_cache/')
+@app.route('/api/generate_cache')
 def generate_cache():
     msg = model.populate_news()
     return jsonify(msg)
 
 
-@app.route('/api/get_cache_info/')
+@app.route('/api/get_cache_info')
 def get_cache_info():
     directory = 'data/'
     file_list = []
