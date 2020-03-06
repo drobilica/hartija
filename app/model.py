@@ -43,7 +43,7 @@ def make_cache(source):
 
 
 def get_news():
-    with open("data/rss-feeds.yaml", 'r') as stream:
+    with open("conf/rss-feeds.yaml", 'r') as stream:
         out = yaml.load(stream, Loader=yaml.Loader)
     yaml_keys = list(out['news'].keys()) # a list
 
