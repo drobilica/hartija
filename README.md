@@ -4,17 +4,41 @@ RSS reader for drobilica
 
 
 ##Todo
-- [X] `make run` to run project
-- [ ] `make cache` to make cache 
-- [ ] `make clean` cleans all data and generates new one
-- [ ] Wheather info on the right side openweathermap https://openweathermap.org/ 
-- [ ] internalization - language switcher i18n ( on lower left side)
-- [ ] On click they should open with short content - 500chars
-- [ ] There should be a tags ( #gaming, #dev, #news, #local_news, #devops, #tech)   
-- [ ] You should be able to add new rss feeds to
-- [ ] read feed list from yaml app/data/rss-feeds.yaml  --- done 
-- [ ] Terminal todo app
-- [ ] generate right menu from YAML keys and check if there is data for that tab and if there is not then make data and render that page 
+#### Frontend
+- [ ] active menu highlight
+- [x] put wheather info somewhere 
+- [ ] beautify weather 
+- [ ] clean up templating and class names
+- [ ] generate right menu from yaml
+- [ ] limit number of characters to 500
+- [ ] translation
+- [ ] fix issue not snapping to 100% height
+- [ ] make login
+- [ ] edit list of subscriptions
+
+#### Backend
+- [x] put wheather info somewhere
+- [ ] cache weather/air info (1hr) ( can be placed inside ext_data.json )
+- [ ] make cache for news if it doesn't exists when i click on `explore`
+- [ ] clean output for some sources
+- [ ] generate right menu from yaml
+- [ ] translation
+- [ ] make login
+- [ ] edit list of subscriptions ( with status checks and list news)
+
+#### DevOps
+- [x] dockerize it `make run`
+- [ ] deploy to heroku,netapp or some serverless like that
+
+
+
+* * *
+
+#### Future improvements
+- [ ] tailwind CSS instead of vanilla CSS
+- [ ] Find pretty color theme
+- [ ] users can choose themes
+- [ ] users can chose subscriptions thumbnails
 
 ## RSS Feeder Sites
 Site lists are located in app/data/rss-feeds.yaml
@@ -46,6 +70,3 @@ Make cache for individual category
 Make cache for all 
 `curl -X GET localhost:5000/api/generate_cache/`
 
-
-#### TODO
-id
