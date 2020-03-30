@@ -4,6 +4,7 @@ import csv
 from bs4 import BeautifulSoup
 from collections import defaultdict
 import yaml
+import threading
 
 def explore(source):
     df = pd.read_csv(f"data/{source}_data.csv")
@@ -22,15 +23,29 @@ def load_live_news():
     return entries
 
 
-def make_cache(source):
 
+
+def make_cache(source):
     with open("conf/rss-feeds.yaml", 'r') as stream:
         out = yaml.load(stream, Loader=yaml.Loader)
 
-    feeds = [] # list of feed objects
+    def list_append(url, feeds):
+        feeds.append(feedparser.parse(url))
+    jobs = []
 
     for url in out['news'][source]:
-        feeds.append(feedparser.parse(url)) # type list
+        feeds = []
+        thread = threading.Thread(target=list_append(url, feeds))
+        jobs.append(thread)
+        print(url)
+
+    for j in jobs:
+        j.start()
+
+
+    for j in jobs:
+        j.join()
+    
     posts = [] # list of posts [(title1, link1, summary1), (title2, link2, summary2) ... ]
 
     for feed in feeds:

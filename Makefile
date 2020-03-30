@@ -5,8 +5,11 @@
 env:
 	pipenv shell
 
-run:
+run: init
 	pipenv run flask run
+
+init: 
+	curl -XGET 'localhost:5000/api/generate_cache'
 
 install:
 	pipenv update
