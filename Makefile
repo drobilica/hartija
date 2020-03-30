@@ -5,15 +5,14 @@
 env:
 	pipenv shell
 
-run: init
-	pipenv run flask run
+run: 
+	rm -rf data/*.csv && pipenv run flask run
 
-init: 
-	curl -XGET 'localhost:5000/api/generate_cache'
+init:
+	rm -rf data/*.csv && curl -XGET 'localhost:5000/api/generate_cache' && curl -XGET 'localhost:5000/api/get_cache_info'
 
 install:
 	pipenv update
-
 
 down:
 	docker-compose down
