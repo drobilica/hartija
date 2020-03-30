@@ -9,7 +9,7 @@ run:
 	rm -rf data/*.csv && pipenv run flask run
 
 init:
-	rm -rf data/*.csv && curl -XGET 'localhost:5000/api/generate_cache' && curl -XGET 'localhost:5000/api/get_cache_info'
+	mkdir -p data/ && rm -rf data/*.csv && curl -XGET 'localhost:5000/api/generate_cache' && curl -XGET 'localhost:5000/api/get_cache_info'
 
 install:
 	pipenv update
