@@ -31,7 +31,7 @@ def explore(source=None):
     if source == None:
         random_news = yaml_keys[random.randint(0,len(yaml_keys)-1)]
         check_cache(random_news)
-        entries = rss_model.explore(random_news)
+        return redirect(f"/explore/{random_news}", code=302)        
     elif source in yaml_keys:
         check_cache(source)
         entries = rss_model.explore(source)
@@ -39,7 +39,6 @@ def explore(source=None):
         return render_template(
             '404.html.j2',
             )
-
 
     return render_template(
         'csv_list.html.j2',
