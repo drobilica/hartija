@@ -18,8 +18,8 @@ def index():
 @app.route('/explore/')
 @app.route('/explore/<source>')
 def explore(source=None):
-    airiq = rservice.load_airiq()
-    weather= rservice.load_weather()
+    # airiq = rservice.load_airiq()
+    # weather= rservice.load_weather()
     if source == None:
         yaml_keys = rss_model.get_news()
         random_news = yaml_keys[random.randint(0,len(yaml_keys)-1)]
@@ -27,12 +27,12 @@ def explore(source=None):
     else:
         entries = rss_model.explore(source)
 
-
     return render_template(
         'csv_list.html.j2',
         entries = entries,
-        airiq = airiq,
-        weather = weather
+        # airiq = airiq,
+        # weather = weather,
+        get_news_list = rss_model.get_news()
         )
 
 

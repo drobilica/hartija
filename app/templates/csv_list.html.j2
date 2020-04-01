@@ -20,21 +20,17 @@
 
 <div class="grid-menu dark-grey">
   <div class="vertical-menu ">
-    <a href="/explore/tech">tech </a>
-    <a href="/explore/political">political</a>
-    <a href="/explore/games">games</a>
-    <a href="/explore/hax">DIY</a>
-    <a href="/explore/serbia_news">serbia_news</a>
+    {% for value in get_news_list %}
+      <a href="/explore/{{ value }}">{{ value }}</a>
+    {% endfor %}
   </div>
 </div>
 </br></br></br></br></br>
 <div class="grid-menu dark-grey">
     <div class="vertical-menu ">
-<a href="/explore/">Weather:{{ weather }}°C </a>
-<a href="/explore/">AIRIQ:{{ airiq }} </a>
-
-
-</div>
+{# <a href="/explore/">Weather:{{ weather }}°C </a> #}
+{# <a href="/explore/">AIRIQ:{{ airiq }} </a> #}
+    </div>
 </div>
 
 
