@@ -10,7 +10,7 @@ RSS reader for drobilica
 - [ ] beautify weather 
 - [ ] clean up templating and class names
 - [x] generate right menu from yaml
-- [ ] limit number of characters to 500
+- [x] limit number of characters to 500
 - [ ] translation
 - [ ] fix issue not snapping to 100% height
 - [ ] make login
@@ -19,9 +19,9 @@ RSS reader for drobilica
 #### Backend
 - [x] put wheather info somewhere
 - [x] on random news users see url which they are redirected
-- [ ] cache weather/air info (1hr) ( can be placed inside ext_data.json )
+- [x] cache weather/air info (1hr) ( can be placed inside ext_data.json )
 - [x] make cache for news if it doesn't exists when i click on `explore`
-- [ ] clean output for some sources
+- [x] clean output for some sources
 - [x] generate right menu from yaml
 - [ ] translation
 - [ ] make login

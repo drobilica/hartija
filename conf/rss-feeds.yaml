@@ -15,6 +15,7 @@ news:
   games:
     - "https://www.gamasutra.com/blogs/rss/"
     - "https://www.eurogamer.net/?format=rss&type=article"
-  test_feed:
-    - "https://www.gamasutra.com/blogs/rss/"
-    - "https://www.eurogamer.net/?format=rss&type=article"
+  best_rss:
+    - "https://www.reddit.com/r/worldnews/.rss"
+    - "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml"
+    - "http://rss.cnn.com/rss/edition_world.rss"

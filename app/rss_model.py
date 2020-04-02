@@ -2,14 +2,24 @@ import pandas as pd
 import feedparser
 import csv
 from bs4 import BeautifulSoup
-from collections import defaultdict
+# from collections import defaultdict
 import yaml
 import threading
+from pathlib import Path
 
-def explore(source):
+def check_cache(source):
+    my_file = Path(f"data/{source}_data.csv")
+    if not my_file.is_file():
+        make_cache(source)
+
+def load_news_cache(source):
     df = pd.read_csv(f"data/{source}_data.csv")
     return df
 
+def clean_content(source):
+    soupy = BeautifulSoup(source, features="html.parser").get_text()
+    content = (soupy[:365] + '...') if len(soupy) > 365 else soupy
+    return content
 
 def load_live_news():
     NewsFeed = feedparser.parse("https://www.eurogamer.net/?format=rss&type=article")
@@ -49,7 +59,7 @@ def make_cache(source):
     for feed in feeds:
         for post in feed.entries:
             # print(post.link)
-            posts.append((post.title, post.link, post.summary))
+            posts.append((post.title, post.link, clean_content(post.summary)))
 
     df = pd.DataFrame(posts, columns=['title', 'link', 'summary']) # pass data to init
     df.to_csv(f'data/{source}_data.csv')

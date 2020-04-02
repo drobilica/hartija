@@ -2,7 +2,6 @@ import os,time
 from app import app, rss_model, rservice
 from flask import render_template, flash, redirect, url_for, request, jsonify
 import random # get this out of this
-from pathlib import Path
 
 
 
@@ -16,6 +15,11 @@ def index():
         'live.html.j2',
         entries = entries
         )
+@app.route('/404')
+def not_found():
+    return render_template(
+        '404.html.j2',
+        )
 
 @app.route('/explore/')
 @app.route('/explore/<source>')
@@ -23,35 +27,25 @@ def explore(source=None):
     # airiq = rservice.load_airiq()
     # weather= rservice.load_weather()
     yaml_keys = rss_model.get_news()
-    def check_cache(source):
-        my_file = Path(f"data/{source}_data.csv")
-        if not my_file.is_file():
-            rss_model.make_cache(source)
     
     if source == None:
         random_news = yaml_keys[random.randint(0,len(yaml_keys)-1)]
-        check_cache(random_news)
+        rss_model.check_cache(random_news)
         return redirect(f"/explore/{random_news}", code=302)        
     elif source in yaml_keys:
-        check_cache(source)
-        entries = rss_model.explore(source)
+        rss_model.check_cache(source)
+        entries = rss_model.load_news_cache(source)
     else:
-        return render_template(
-            '404.html.j2',
-            )
-
+        return redirect(f"/404", code=302)        
+    airiq = rservice.load_airiq()
+    weather = rservice.load_weather()
     return render_template(
         'csv_list.html.j2',
         entries = entries,
-        # airiq = airiq,
-        # weather = weather,
+        airiq = airiq,
+        weather = weather,
         get_news_list = rss_model.get_news()
         )
-
-
-
-
-
 
 @app.route('/live')
 def live():
