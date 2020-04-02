@@ -30,10 +30,10 @@ def explore(source=None):
     
     if source == None:
         random_news = yaml_keys[random.randint(0,len(yaml_keys)-1)]
-        rss_model.check_cache(random_news)
+        rss_model.check_file_cache(random_news)
         return redirect(f"/explore/{random_news}", code=302)        
     elif source in yaml_keys:
-        rss_model.check_cache(source)
+        rss_model.check_file_cache(source)
         entries = rss_model.load_news_cache(source)
     else:
         return redirect(f"/404", code=302)        

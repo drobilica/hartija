@@ -7,7 +7,7 @@ import yaml
 import threading
 from pathlib import Path
 
-def check_cache(source):
+def check_file_cache(source):
     my_file = Path(f"data/{source}_data.csv")
     if not my_file.is_file():
         make_cache(source)
@@ -41,7 +41,7 @@ def make_cache(source):
         feeds.append(feedparser.parse(url))
     jobs = []
 
-    for url in out['news'][source]:
+    for url in out['news'][source]['url']:
         feeds = []
         thread = threading.Thread(target=list_append(url, feeds))
         jobs.append(thread)
