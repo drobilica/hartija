@@ -26,6 +26,7 @@ RSS reader for drobilica
 - [ ] translation
 - [ ] make login
 - [ ] edit list of subscriptions ( with status checks and list news)
+- [ ] auto generate mtime for rss feeds
 
 #### DevOps
 - [x] dockerize it `make it`
