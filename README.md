@@ -28,7 +28,7 @@ RSS reader for drobilica
 - [ ] edit list of subscriptions ( with status checks and list news)
 
 #### DevOps
-- [x] dockerize it `make run`
+- [x] dockerize it `make it`
 - [ ] deploy to heroku,netapp or some serverless like that
 
 
